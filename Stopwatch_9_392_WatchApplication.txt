@@ -8,7 +8,6 @@ Graph: Stopwatch <WatchApplication> 9_392
 Object: Action <Action> 9_755
 Object: Action <Action> 9_1531
 Object: Action <Action> 9_1713
-Object: Action <Action> 9_21629
 Object: Up <Button> 9_886
 	Button name: Up
 Object: Down <Button> 9_1963
@@ -42,11 +41,6 @@ Object: Stopped <State [Watch]> 9_3446
 		Central: SECOND
 	Blinking: 
 	Documentation: In this state the Stopwatch is stopped and current stop time is shown on the display.
-Object: Laptime <State [Watch]> 9_21617
-	State name: Laptime
-	DisplayFn: 
-	Blinking: 
-	Documentation: 
 Object: Stop [Watch] <Stop [Watch]> 9_2000
 Object: startTime <Variable> 9_1230
 	Name: startTime
@@ -93,12 +87,6 @@ Relationship: Set <Set> 9_2909
   Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_453
   Role: Get <Get>  Object: <VariableRef> 9_2804
   Role: Minus <Minus>  Object: <Variable> 9_1230
-Relationship: Set <Set> 9_21668
-  Role:  <ActionBody>  Object: <Action> 9_21629
-	Order: 
-  Role: Get <Get>  Object: <VariableRef> 9_2804
-  Role: Minus <Minus>  Object: <Variable> 9_1230
-  Role: Set <Set>  Object: <Variable> 9_3196
 Relationship: Transition <Transition> 9_507
   Role: Event <Event>  Object: <Button> 9_2489
   Role: From <From>  Object: <State [Watch]> 9_1547
@@ -125,12 +113,3 @@ Relationship: Transition <Transition> 9_2226
   Role: Event <Event>  Object: <Button> 9_886
   Role: From <From>  Object: <State [Watch]> 9_1547
   Role: To <To>  Object: <State [Watch]> 9_3446
-Relationship: Transition <Transition> 9_21644
-  Role: Action <Action>  Object: <Action> 9_21629
-  Role: Event <Event>  Object: <Button> 9_1963
-  Role: From <From>  Object: <State [Watch]> 9_1547
-  Role: To <To>  Object: <State [Watch]> 9_21617
-Relationship: Transition <Transition> 9_21657
-  Role: Event <Event>  Object: <Button> 9_1963
-  Role: From <From>  Object: <State [Watch]> 9_21617
-  Role: To <To>  Object: <State [Watch]> 9_1547
