@@ -1,0 +1,7 @@
+Report '_function'
+'	public void ' id '() {
+		' md5id id md5block
+'		' md5sum
+'	}
+'
+endreport
