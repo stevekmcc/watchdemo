@@ -25,10 +25,6 @@ if $use7zip OR $dbBackupDir <> __($vcsWorkingDir sep $dbBackupName) then
 	_osRmdir($dbBackupDir) newline
 endif
 
-if $srcDir then
-	_osCopy($srcDir, $vcsWorkingDir sep 'src' sep) ' || ' _osPause() newline
-endif
-
 _osCd($vcsWorkingDir) newline
 
 subreport '_vcsCheckIn_' $vcs run

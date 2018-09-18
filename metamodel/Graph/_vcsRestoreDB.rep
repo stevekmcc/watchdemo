@@ -4,12 +4,11 @@ _vcsRestoreDB(@dbDir)
 if $use7zip then
 	'"' $7zipExe '" x "' $vcsWorkingDir sep $dbBackupName '.7z" -o"' @dbDir'"' newline
 else
-	_osCopy($vcsWorkingDir sep $dbBackupName, @dbDir) ' || ' _osPause() newline
+	if sep = '\' then 
+		'xcopy /e /i /%xcopyDisplay% /z "' $vcsWorkingDir sep $dbBackupName '" "' @dbDir '"' newline
+	else
+		'cp -r ' $vcsWorkingDir sep $dbBackupName ' ' @dbDir  newline
+	endif
 endif
-
-if $srcDir then
-	_osMkdir($srcDir) ' || ' _osPause() newline
-	_osCopy($vcsWorkingDir sep 'src' sep '"*"', $srcDir) ' || ' _osPause() newline
-endif
-
+	
 'pushd "' $vcsWorkingDir '"' newline
