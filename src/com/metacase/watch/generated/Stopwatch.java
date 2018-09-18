@@ -26,7 +26,6 @@ public class Stopwatch extends AbstractWatchApplication {
 
 	public void reset() {
 		/* MEPMD5 reset */
-		setstopTime(new METime());
 		/* MEPMD5 73d0a7b3fab51beeee8ba428b9cd1d47 */
 	}
 
