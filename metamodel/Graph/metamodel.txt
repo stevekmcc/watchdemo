@@ -142,6 +142,7 @@ _vcsPaths
 _vcsPreCheckIn
 _vcsPreCheckIn_git
 _vcsPreCheckIn_svn
+_vcsREADME
 _vcsRepositorySnapshot
 _vcsRestoreDB
 _vcsSkipPropRecursion

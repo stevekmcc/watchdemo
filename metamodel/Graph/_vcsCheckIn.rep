@@ -4,6 +4,13 @@ _vcsCheckIn(@vcsComment)
 /* Set paths for executables and versioning target */
 _vcsPaths()
 
+/* Output the current README.md (if any), since we emptied the directory */
+if _vcsREADME() then 
+	filename $vcsWorkingDir sep 'README.md' encoding 'UTF-8' write 
+		_vcsREADME()
+	close
+endif
+
 /* Output the version comment */
 filename 'vcsComment.txt' encoding 'UTF-8' write @vcsComment close
 
