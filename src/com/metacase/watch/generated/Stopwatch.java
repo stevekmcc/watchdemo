@@ -6,8 +6,9 @@ public class Stopwatch extends AbstractWatchApplication {
 	static final int a9_755	= 1;
 	static final int a9_1531	= 2;
 	static final int a9_1713	= 3;
-	static final int d9_2464	= 4;
-	static final int d9_453	= 5;
+	static final int a9_25602	= 4;
+	static final int d9_2464	= 5;
+	static final int d9_453	= 6;
 	public METime startTime = new METime();
 	public METime stopTime = new METime();
 
@@ -33,6 +34,7 @@ public class Stopwatch extends AbstractWatchApplication {
 	public Stopwatch(Master master) {
 		super(master, "9_392");
             addStateOop("Start [Watch]", "9_457");
+            addStateOop("Laptime", "9_25590");
             addStateOop("Running", "9_1547");
             addStateOop("Stopped", "9_3446");
             addStateOop("Stop [Watch]", "9_2000");
@@ -43,8 +45,11 @@ public class Stopwatch extends AbstractWatchApplication {
             addTransition ("Stopped", "Up", a9_755, "Running");
             addTransition ("Stopped", "Down", a9_1713, "Stopped");
             addTransition ("Running", "Up", a9_1531, "Stopped");
+            addTransition ("Running", "Down", a9_25602, "Laptime");
+            addTransition ("Laptime", "Down", 0, "Running");
 
 
+            addStateDisplay("Laptime", -1, METime.SECOND, d9_2464);
             addStateDisplay("Running", -1, METime.SECOND, d9_453);
             addStateDisplay("Stopped", -1, METime.SECOND, d9_2464);
 	};
@@ -63,6 +68,9 @@ public class Stopwatch extends AbstractWatchApplication {
 				return null;
 			case a9_1713:
 				reset();
+				return null;
+			case a9_25602:
+				setStopTime(getSysTime().meMinus(getStartTime()));
 				return null;
 			case d9_2464:
 				return getStopTime();
