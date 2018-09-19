@@ -1,5 +1,5 @@
 Report '_Set'
-'set' do ~Set.() {id} '('
+'set' do ~Set.() {id%firstUpper} '('
 subreport '_calcValue' run
 ');'
 endreport

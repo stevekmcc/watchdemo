@@ -1,11 +1,11 @@
 Report '_calcValue'
 do ~Get.() 
-{	'get' id '()' 
+{	'get' id%firstUpper '()' 
 }
 do ~(Minus|Plus) 
 {	'.me' type 
 	do .()
-	{	'(get' id '())' 
+	{	'(get' id%firstUpper '())' 
 	} 
 }
 endreport

@@ -1,8 +1,8 @@
 Report '_getSet'
-'	public ' :Type; ' get' id '() {
+'	public ' :Type; ' get' id%firstUpper '() {
 		return ' id ';
 	}
-	public void set' id '(' :Type; ' t1) {
+	public void set' id%firstUpper '(' :Type; ' t1) {
 		' id ' = t1;
 	}
 '	

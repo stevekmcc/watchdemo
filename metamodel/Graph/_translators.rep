@@ -9,6 +9,14 @@ to '%lower
 A-Z a-z'
 endto
 
+to '%firstUpper
+/(.)(.*)/ $$1%upper;$2'
+endto
+
+to '%firstLower
+/(.)(.*)/ $$1%lower;$2'
+endto
+
 /* make a legal variable name by mapping non-alphanumerics to underscore */
 to '%var
 a-zA-Z0-9 *
