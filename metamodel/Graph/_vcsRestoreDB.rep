@@ -13,7 +13,7 @@ endif
 
 if $srcDir then
    _osMkdir($srcDir) ' || ' _osPause() newline
-   _osCopy($vcsWorkingDir sep 'src' sep '"*"', $srcDir) ' || ' _osPause() newline
+   _osCopy($vcsWorkingDir sep 'src' sep '.', $srcDir) ' || ' _osPause() newline
 endif
 	
 'pushd "' $vcsWorkingDir '"' newline

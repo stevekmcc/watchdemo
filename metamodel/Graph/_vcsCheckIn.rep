@@ -33,7 +33,7 @@ if $use7zip OR $dbBackupDir <> __($vcsWorkingDir sep $dbBackupName) then
 endif
 
 if $srcDir then
-   _osCopy($srcDir, $vcsWorkingDir sep 'src' sep) ' || ' _osPause() newline
+   _osCopy($srcDir sep '.', $vcsWorkingDir sep 'src') ' || ' _osPause() newline
 endif
 
 _osCd($vcsWorkingDir) newline
