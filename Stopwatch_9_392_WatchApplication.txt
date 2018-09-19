@@ -20,8 +20,6 @@ Object: running <DisplayFn> 9_453
 Object:  <DisplayFn> 9_2464
 	Name: 
 	Central: SECOND
-Object: reset <Function> 9_25540
-	Function Name: reset
 Object: stopwatch <Icon> 9_2777
 	IconID: stopwatch
 Object: Start [Watch] <Start [Watch]> 9_457
@@ -64,10 +62,6 @@ Relationship: Icon <Icon> 9_3137
 	Order: 
   Role: On <Boolean>  Object: <Icon> 9_2777
 	Operation: On
-Relationship: Run <Run> 9_25545
-  Role:  <ActionBody>  Object: <Action> 9_1713
-	Order: 
-  Role: Function <Function>  Object: <Function> 9_25540
 Relationship: Set <Set> 9_674
   Role:  <ActionBody>  Object: <Action> 9_1531
 	Order: 
@@ -87,6 +81,12 @@ Relationship: Set <Set> 9_2909
   Role: DisplayFnBody <DisplayFnBody>  Object: <DisplayFn> 9_453
   Role: Get <Get>  Object: <VariableRef> 9_2804
   Role: Minus <Minus>  Object: <Variable> 9_1230
+Relationship: Set <Set> 9_25559
+  Role:  <ActionBody>  Object: <Action> 9_1713
+	Order: 
+  Role: Get <Get>  Object: <Variable> 9_1230
+  Role: Minus <Minus>  Object: <Variable> 9_1230
+  Role: Set <Set>  Object: <Variable> 9_3196
 Relationship: Transition <Transition> 9_507
   Role: Event <Event>  Object: <Button> 9_2489
   Role: From <From>  Object: <State [Watch]> 9_1547
