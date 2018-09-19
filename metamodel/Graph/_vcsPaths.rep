@@ -18,6 +18,10 @@ $vcs = 'git'
 $dbName = 'watchdemo' /* Default line: $dbName = __(internal 'dbName' read) */
 $dbBaseDir = '.'
 
+/* $srcDir is for source code you also want versioned; '' for none */
+$srcDir = __(subreport '_default directory' run 'WatchModels' sep 'src')
+
+
 /* The repository copy and snapshots will be made in 
 		the VCS working directory, $vcsWorkingDir, 
 		where vcs is git, svn etc. depending on $vcs above
